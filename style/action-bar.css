@@ -1,0 +1,76 @@
+/*
+ * The action bar 
+ */
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: azure;
+    text-align: left;
+    margin:0;
+    padding: 0;
+    text-align: center;
+}
+
+nav > div {
+    clear:both;
+    padding: 0.5em 1em 0 1em;
+}
+
+/* The send box */
+
+nav .send-box {
+    float: right;
+    text-align: right;
+}
+nav input {
+    width: 7em;
+    font-size: 0.9em;
+    padding: 0.5em;
+}
+nav button#send-message {
+    font-size: 0.9em;
+    margin: 0 0 0 1em;
+    padding: 0.5em;
+    background-color: #23538a;
+    color: white;
+    cursor: pointer;
+}
+nav button#send-message:hover {
+    background-color: #cc9966;
+}
+
+
+/* The take-photo button */
+
+nav #take-photo {
+    float: right;
+    position: relative;
+    width: 2.6em;
+    height: 2.6em;
+    margin: 0 1em 0 0;
+    background-color: #23538a;
+    border-radius: 1.3em;
+    cursor: pointer;
+}
+nav #take-photo:hover {
+    background-color: #cc9966;
+}
+
+
+/* The install button */
+
+nav button#install {
+    display: none;
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    color: white;
+    cursor: pointer;
+    background-color: #23538a;
+}
+nav button#install:hover {
+    background-color: #cc9966;
+}

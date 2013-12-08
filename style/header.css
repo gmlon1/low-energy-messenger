@@ -1,0 +1,22 @@
+/*
+ * The header 
+ */
+
+header {
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+header > * {
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    color: white;
+}

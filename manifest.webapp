@@ -1,0 +1,13 @@
+{
+  "name": "Low Energy Messenger",
+  "description": "An instant messaging app with a very high attention to the battery status.",
+  "launch_path": "/mdn/low-energy-messenger/public_html/",
+  "icons": {
+    "128": "/mdn/low-energy-messenger/public_html/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Francesco Iovine",
+    "url": "http://www.francesco.iovine.name"
+  },
+  "default_locale": "en"
+}

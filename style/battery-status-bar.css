@@ -1,0 +1,18 @@
+/*
+ * The Battery Status Bar
+ */
+
+#battery-status-bar {
+    display: none;
+    margin-top: 0.5em;
+}
+#battery-status-bar > *{
+    display: inline-block;
+}
+#battery-status-bar .percentage {
+    font-size: 0.9em;
+    padding-left: 0.5em;
+}
+#battery-status-bar .time {
+    font-size: 0.9em;
+}

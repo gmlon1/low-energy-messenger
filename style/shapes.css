@@ -1,0 +1,118 @@
+/*
+ * SHAPES 
+ */
+
+/* Battery */
+
+.battery {
+    background-color: azure;
+    border: 0.1em solid black;
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
+    height: 1em;
+    position: relative;
+    width: 2em;
+    top: 0.25em;
+}
+.battery:before {
+    background: none repeat scroll 0 0 azure;
+    border: 0.1em solid black;
+    border-radius: 0 0.1em 0.1em 0;
+    content: "";
+    display: block;
+    height: 0.4em;
+    left: 2em;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0.2em;
+    width: 0.15em;
+}
+.battery .power {
+    position: absolute;
+    z-index: 2;
+    left: 0.05em;
+    top: 0.05em;
+    right: 0.05em;
+    bottom: 0.05em;
+    background: azure;
+    border-radius: 0.1em;
+}
+.battery .level{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 80%; /* this property will be changed via javascript */
+    bottom:0;
+    background: blue;
+    border-radius: 0.1em;
+}
+.battery .low.level{
+    background: red;
+}
+.battery .medium.level{
+    background: yellow;
+}
+.battery .high.level{
+    background: darkblue;
+}
+
+
+/* Avatar (You) */
+
+.you {
+    width: 100%;
+    position: absolute;
+    bottom:0;
+}
+.you .face {
+    margin: 0.2em 0 0.1em 0.7em;
+    width: 1.6em;
+    height: 1.6em;
+    background: yellowgreen;
+    border-radius: 0.8em;
+}
+.you .body {
+    margin-left: 10%;
+    width: 80%;
+    height: 1em;
+    background: yellowgreen;
+}
+
+
+/* Camera */
+
+.camera {
+    position: absolute;
+    top: 0.8em;
+    left: 0.5em;
+    background-color: white;
+    border-radius: 0.1em 0.1em 0.1em 0.1em;
+    height: 1em;
+    width: 1.6em;
+    text-align: center;
+}
+.camera:before {
+    background: none repeat scroll 0 0 white;
+    border-radius: 0.1em 0.1em 0 0;
+    content: "";
+    display: block;
+    height: 0.2em;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: -0.2em;
+    width: 1em;
+    border-radius: 0.1em 0.1em 0 0;
+}
+.camera .lens{
+    background: white;
+    top: -0.1em;
+    font-size: 1.25em;
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    border: 0.1em solid #23538a;
+    position: relative;
+    border-radius: 0.35em;
+}

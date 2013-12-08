@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width"> 
+        <title>Low Energy Messenger</title>
+        <link href="style/root.css" type="text/css" rel="stylesheet">
+        <link href="style/header.css" type="text/css" rel="stylesheet">
+        <link href="style/battery-status-bar.css" type="text/css" rel="stylesheet">
+        <link href="style/chat.css" type="text/css" rel="stylesheet">
+        <link href="style/action-bar.css" type="text/css" rel="stylesheet">
+        <link href="style/shapes.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Low Energy Messenger</h1>
+                <div id="battery-status-bar">
+                    <div class="battery">
+                        <div class="power">
+                            <div class="level"></div>
+                        </div>
+                    </div>
+                    <div class="percentage"></div>
+                    <div class="time"></div>
+                </div>
+            </header>
+
+            <section id="chat">
+                <article>
+                    <div class="avatar"><img alt="franciov" src="img/franciov.png" /></div>
+                    <div class="message">
+                        <div>
+                            <h2>Franciov</h2>
+                            <p>Hello, this is an instant messaging app with a very high attention to the battery status.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- This element is used as anchor for the chat -->
+            <div id="bottom"></div>
+        </div>
+
+        <nav>
+            <div>
+                <div class="send-box">
+                    <input type="text" id="text-message" value="Hello! :)" />
+                    <button id="send-message">Send</button>
+                </div>
+                <div id="take-photo">
+                    <div class="camera">
+                        <div class="lens"></div>
+                    </div>
+                    <div class="percentage"></div>
+                    <div class="time"></div>
+                </div>
+            </div>
+            <div>
+                <button id="install">Install</button>
+            </div>
+        </nav>
+
+        <script src="scripts/utils/StringUtils.js"></script>
+        <script src="scripts/utils/EnergyManager.js"></script>
+        <script src="scripts/controllers/BatteryStatusBarController.js"></script>
+        <script src="scripts/controllers/ActionBarController.js"></script>
+        <script src="scripts/controllers/ChatViewController.js"></script>
+        <script src="scripts/install.js"></script>
+        <script src="scripts/start.js"></script>
+    </body>
+
+</html>
