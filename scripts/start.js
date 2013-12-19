@@ -1,7 +1,7 @@
 
 /*
  * start.js
- * This javascript file initialize the objects needed by the Low Energy Messenger needs to work.
+ * This javascript file initialize the objects needed by the XMAS Tales Web App.
  */
 
 /* Add new objects to window */
