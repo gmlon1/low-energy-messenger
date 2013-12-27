@@ -2,7 +2,7 @@
 function ChatViewController() {
 
     /* Initialize DOM Objects */
-    var chat = document.querySelector('#chat');
+    this.chat = document.querySelector('#chat');
 
 }
 
@@ -18,7 +18,7 @@ ChatViewController.prototype = {
         if (message && message !== '') {
 
             /* The user sends a message to the chat */
-            chat.innerHTML = chat.innerHTML +
+            this.chat.innerHTML = this.chat.innerHTML +
                     '<article class="you">' +
                     '<div class="avatar"><div class="you"><div class="face"></div><div class="body"></div></div></div>' +
                     '<div class="message">' +
@@ -44,7 +44,7 @@ ChatViewController.prototype = {
         if (message && message !== '') {
 
             /* The user receives a message from the chat */
-            chat.innerHTML = chat.innerHTML +
+            this.chat.innerHTML = this.chat.innerHTML +
                     '<article>' +
                     '<div class="avatar"><img alt="franciov" src="img/franciov.png" /></div>' +
                     '<div class="message">' +
