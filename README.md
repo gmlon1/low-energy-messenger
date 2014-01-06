@@ -1,8 +1,14 @@
 # Low Energy Messenger
 
-Low Energy Messenger is an instant messaging Web App (also for Firefox OS) that pays very high attention to battery status. It has originally been developed for [this MDN page](https://developer.mozilla.org/en-US/Apps/Developing/gather_and_modify_data/retrieving_battery_status_information) that looks at one way to manage energy consumption: The Battery Status API.
+Low Energy Messenger is an instant messaging Web App (also for Firefox OS) that pays very high attention to battery status.
 
-## Features
+It has originally been developed for [this MDN page](https://developer.mozilla.org/en-US/Apps/Developing/gather_and_modify_data/retrieving_battery_status_information) that looks at one way to manage energy consumption: The Battery Status API.
+
+The demo is published [here](http://www.francesco.iovine.name/mdn/low-energy-messenger/public_html/).
+
+![Screenshot](https://mdn.mozillademos.org/files/6703/screenshot.png)
+
+## Notes
 
 Low Energy Messenger has the following features:
 
@@ -14,7 +20,7 @@ The app doesn’t allow users to take photos when the battery level is low or th
 
 ## Project Setup
 
-No setup is needed. The demo is published [here](www.francesco.iovine.name/mdn/low-energy-messenger/public_html/index.html). 
+No setup is needed. 
 
 If you want to know more about building a Web App for Firefox OS, please have a look at [this Quickstart app tutorial](https://developer.mozilla.org/en-US/Apps/Quickstart/Build/Your_first_app)
 
