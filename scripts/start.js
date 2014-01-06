@@ -23,11 +23,14 @@ window.onload = function() {
         window.mBatteryStatusBarController.update();
 
         /* Notify the user that the Battery Status API is supported */
-        window.mChatViewController.receiveMessage('Congratulations! This browser supports the Battery Status API: check the battery status bar above. Also, you won’t be able to take a photo if the battery of your device is low and not charging.');
+        window.mChatViewController.receiveMessage('Congratulations! This browser supports the Battery Status API: check the battery status bar above. Also, you won’t be able to take a photo if the battery of your device is low and not charging.', true);
 
     } else {
 
         /* Notify the user that the Battery Status API is not supported */
-        window.mChatViewController.receiveMessage('I\'m sorry: the Battery Status API is not supported on this browser.');
+        window.mChatViewController.receiveMessage('I\'m sorry: the Battery Status API is not supported on this browser.', true);
     }
+    
+    window.scrollTo(0,1);
+    
 };

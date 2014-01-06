@@ -13,7 +13,7 @@ ChatViewController.prototype = {
      * @param {type} message
      * @returns {undefined}
      */
-    sendMessage: function(message) {
+    sendMessage: function(message, noScroll) {
 
         if (message && message !== '') {
 
@@ -30,8 +30,13 @@ ChatViewController.prototype = {
                     '</article>';
         }
 
-        // Scroll the chat to the bottom in order to make the message visible
-        this.scrollDown();
+        if (noScroll) {
+            // do nothing
+        }
+        else {
+            // Scroll the chat to the bottom in order to make the message visible
+            this.scrollDown();
+        }
     },
     /* 
      * receiveMessage
@@ -39,7 +44,7 @@ ChatViewController.prototype = {
      * @param {type} message
      * @returns {undefined}
      */
-    receiveMessage: function(message) {
+    receiveMessage: function(message, noScroll) {
 
         if (message && message !== '') {
 
@@ -56,8 +61,13 @@ ChatViewController.prototype = {
                     '</article>';
         }
 
-        // Scroll the chat to the bottom in order to make the message visible
-        this.scrollDown();
+        if (noScroll) {
+            // do nothing
+        }
+        else {
+            // Scroll the chat to the bottom in order to make the message visible
+            this.scrollDown();
+        }
     },
     /* 
      * scrollDown
