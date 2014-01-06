@@ -77,7 +77,8 @@ EnergyManager.prototype = {
      * @returns {a String containing a formatted time if available, undefined otherwise}
      */
     getBatteryChargingTime: function() {
-        if (this.battery.chargingTime === Infinity) {
+        if (this.battery.chargingTime === Infinity 
+                || this.battery.chargingTime === 0) {
             return undefined;
         }        
         var time = StringUtils.getHumanReadableTime(this.battery.chargingTime);
@@ -88,8 +89,9 @@ EnergyManager.prototype = {
      * Gets the battery discharging time in seconds and converts it to a string
      * @returns {a String containing a formatted time, undefined otherwise}
      */
-    getBatteryDischargingTime: function() {
-        if (this.battery.dischargingTime === Infinity) {
+    getBatteryDischargingTime: function() {        
+        if (this.battery.dischargingTime === Infinity 
+                || this.battery.dischargingTime === 0) {
             return undefined;
         }
         var time = StringUtils.getHumanReadableTime(this.battery.dischargingTime);

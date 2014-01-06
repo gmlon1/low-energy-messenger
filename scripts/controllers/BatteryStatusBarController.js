@@ -49,10 +49,12 @@ BatteryStatusBarController.prototype = {
         }
         else if (window.mEnergyManager.isBatteryCharging()) { // battery charging
 
+            var batteryChargingTime = window.mEnergyManager.getBatteryChargingTime();
+            
             chargingStatusAndTime = 'Charging: ';
-
-            if (window.mEnergyManager.getBatteryChargingTime()) {
-                chargingStatusAndTime += window.mEnergyManager.getBatteryChargingTime();
+            
+            if (batteryChargingTime) {
+                chargingStatusAndTime += batteryChargingTime;
                 chargingStatusAndTime += ' until full';
             }
             else { // charging time unknown
@@ -62,14 +64,15 @@ BatteryStatusBarController.prototype = {
         }
         else { // battery discharging
 
+            var batteryDischargingTime = window.mEnergyManager.getBatteryDischargingTime();
+            
             chargingStatusAndTime = 'Discharging: ';
-
-            if (window.mEnergyManager.getBatteryDischargingTime()) {
-                chargingStatusAndTime += window.mEnergyManager.getBatteryDischargingTime();
+            
+            if (batteryDischargingTime) {
+                chargingStatusAndTime += batteryDischargingTime;
                 chargingStatusAndTime += ' remaining';
             }
             else { // discharging time unknown
-                chargingStatusAndTime += ': ';
                 chargingStatusAndTime += 'calculating time remaining ...';
             }
         }
