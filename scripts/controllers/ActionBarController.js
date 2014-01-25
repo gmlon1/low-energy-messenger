@@ -5,12 +5,28 @@ function ActionBarController() {
     this.takePhotoButton = document.querySelector('#take-photo');
     this.sendMessageButton = document.querySelector('#send-message');
     this.textMessageField = document.querySelector('#text-message');
+    this.installButton = document.querySelector('#install');
 
     /* Call takePhoto() when the takePhoto button is clicked */
     this.takePhotoButton.onclick = this.takePhoto;
 
     /* Call send() When the send button is clicked */
     this.sendMessageButton.onclick = this.send;
+
+    /* Checks whether the app is installed 
+    var checkInstalled = window.mFirefoxOSInstaller.checkInstalled();
+    if (checkInstalled === true) {
+        // hide the install button
+        this.installButton.style.display = "none";
+    }
+    else if (checkInstalled === false) {
+        // show the install button
+        this.installButton.style.display = "block";
+
+        // install the app when the user clicks on the install button
+        this.installButton.onclick = window.mFirefoxOSInstaller.install;
+    }
+    */
 }
 
 
