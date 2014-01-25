@@ -19,12 +19,15 @@ function install(ev) {
 
     // App is installed
     installLocFind.onsuccess = function(data) {
-        // do nothing
+        // hide the install button
+        installButton.style.display = "none";
+        
+        // relies on system notifications
     };
 
     // App wasn't installed
     installLocFind.onerror = function() {
-        alert(installapp.error.name);
+        // relies on system notifications
     };
 }
 
