@@ -6,7 +6,7 @@ It has originally been developed for [this MDN page](https://developer.mozilla.o
 
 The demo is published [here](http://www.francesco.iovine.name/mdn/low-energy-messenger/public_html/) ([short link](http://goo.gl/87QanF))
 
-![Screenshot](https://raw.github.com/franciov/low-energy-messenger/master/img/screenshots/screenshot.png)
+![Screenshot](https://raw.github.com/franciov/low-energy-messenger/master/img/screenshots/firefoxos-simulator.png)
 
 ## Notes
 
