@@ -6,7 +6,7 @@ It has originally been developed for [this MDN page](https://developer.mozilla.o
 
 The demo is published [here](http://www.francesco.iovine.name/mdn/low-energy-messenger/public_html/).
 
-![Screenshot](https://mdn.mozillademos.org/files/6703/screenshot.png)
+![Screenshot](https://github.com/franciov/low-energy-messenger/blob/master/img/screenshots/screenshot.png)
 
 ## Notes
 
