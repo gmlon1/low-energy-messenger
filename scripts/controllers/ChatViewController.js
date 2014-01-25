@@ -20,7 +20,7 @@ ChatViewController.prototype = {
             /* The user sends a message to the chat */
             this.chat.innerHTML = this.chat.innerHTML +
                     '<article class="you">' +
-                    '<div class="avatar"><div class="you"><div class="face"></div><div class="body"></div></div></div>' +
+                    '<div class="avatar"><div class="face"></div><div class="body"></div></div>' +
                     '<div class="message">' +
                     '<div>' +
                     '<h2>You</h2>' +
