@@ -31,6 +31,7 @@ Tests are to be written.
 ## Contributing
 
 - include real messenger functionality, using WebRTC or Web Sockets
+- FirefoxOSInstaller
 - better look&feel
 - add tests
 - open github issues
