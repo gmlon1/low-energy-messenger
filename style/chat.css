@@ -57,11 +57,11 @@ section#chat article .message > div:after {
     position: absolute;
     top: 1em;
     right: 100%;
+    width: 0;
     border-width: 1em 0 0 1em;
     border-style: solid;
     border-color: white transparent;
     display: block;
-    width: 0;
 }
 section#chat article .message img {
     width: 100%;
@@ -79,7 +79,6 @@ section#chat article.you .avatar {
 section#chat article.you .message {
 }
 section#chat article.you .message > div:after {
-    right: auto;
     left: 100%;
     border-width: 0 1em 1em 0;
 }
