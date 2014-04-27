@@ -2,7 +2,9 @@
 function ChatViewController() {
 
     /* Initialize DOM Objects */
-    this.chat = document.querySelector('#chat');
+    this.chatscreen = document.querySelector('#chatscreen');
+    this.chat = document.querySelector('#chatscreen #chat');
+    this.nav = document.querySelector('#chatscreen nav');
 
 }
 
@@ -34,8 +36,8 @@ ChatViewController.prototype = {
             // do nothing
         }
         else {
-            // Scroll the chat to the bottom in order to make the message visible
-            this.scrollDown();
+            // Scroll the page to the bottom in order to make the message visible
+            LowEnergyMessenger.scrollDown();
         }
     },
     /* 
@@ -65,8 +67,8 @@ ChatViewController.prototype = {
             // do nothing
         }
         else {
-            // Scroll the chat to the bottom in order to make the message visible
-            this.scrollDown();
+            // Scroll the page to the bottom in order to make the message visible
+            LowEnergyMessenger.scrollDown();
         }
     },
     /* 
@@ -75,5 +77,13 @@ ChatViewController.prototype = {
      */
     scrollDown: function() {
         window.location = "#bottom";
+    },
+    /* 
+     * show
+     * Show the chat screen
+     */
+    show: function() {
+        LowEnergyMessenger.clearPages();
+        this.chatscreen.style.display = 'block';
     }
 };

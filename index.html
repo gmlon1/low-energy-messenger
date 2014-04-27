@@ -2,17 +2,23 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width"> 
+        <meta name="viewport" content="width=device-width, user-scalable=no"> 
         <title>Low Energy Messenger</title>
         <link href="style/root.css" type="text/css" rel="stylesheet">
+        <link href="style/main-screen.css" type="text/css" rel="stylesheet">
         <link href="style/header.css" type="text/css" rel="stylesheet">
         <link href="style/battery-status-bar.css" type="text/css" rel="stylesheet">
         <link href="style/chat.css" type="text/css" rel="stylesheet">
         <link href="style/action-bar.css" type="text/css" rel="stylesheet">
+        <link href="style/call-screen.css" type="text/css" rel="stylesheet">
         <link href="style/shapes.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="mainscreen">
+
+            <!-- This element is used as anchor for the call page -->
+            <div id="top"></div>
+
             <header>
                 <h1>Low Energy Messenger</h1>
                 <div id="battery-status-bar">
@@ -26,57 +32,93 @@
                 </div>
             </header>
 
-            <section id="chat">
-                <article>
-                    <div class="avatar"><img alt="franciov" src="img/franciov.png" /></div>
-                    <div class="message">
-                        <div>
-                            <h2>Franciov</h2>
-                            <p>Hello, this is an instant messaging app that pays very high attention to battery status.</p>
-                        </div>
+            <section id="callscreen">
+                <header>
+                    <h1>Francesco Iovine</h1>
+                    <h2>+39 347 5510192</h2>
+                </header>
+                <article id="callbox">
+                    <div id="calling">
+                        <span>Calling</span><img src="img/outgoing-call.png" alt="phone" />
                     </div>
                 </article>
-                <!-- <article class="you">
-                    <div class="avatar">
-                        <div class="face"></div>
-                        <div class="body"></div>                            
-                    </div>
-                    <div class="message">
-                        <div>
-                            <h2>Franciov</h2>
-                            <p>Hello :)</p>
+                <article id="proximity">
+                    <header>Proximity</header>
+                    <div>Near: <span id="near">?</span></div>
+                    <div>Min: <span id="min">?</span> cm</div>
+                    <div>Max: <span id="max">?</span> cm</div>
+                    <div>Device proximity: <span id="deviceproximity">?</span> cm</div>
+                </article>
+                <nav>
+                    <button id="hangup"><img src="img/hangup_icon.png" alt="hangup" /></button>
+                </nav>
+            </section>
+
+            <div style="clear: both"></div>
+
+            <section id="chatscreen">
+                <section id="chat">
+                    <article>
+                        <div class="avatar"><img alt="franciov" src="img/franciov.png" /></div>
+                        <div class="message">
+                            <div>
+                                <h2>Franciov</h2>
+                                <p>Hello, this is an instant messaging app that pays very high attention to battery status.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- <article class="you">
+                        <div class="avatar">
+                            <div class="face"></div>
+                            <div class="body"></div>                            
+                        </div>
+                        <div class="message">
+                            <div>
+                                <h2>Franciov</h2>
+                                <p>Hello :)</p>
+                            </div>
+                        </div>
+                    </article> -->
+                </section>
+                <nav>
+                    <div>
+                        <div class="send-box">
+                            <input type="text" id="text-message" value="Hello! :)" />
+                            <button id="send-message">Send</button>
+                            <!--<button id="call-button">Call</button>-->
+                            <div id="call-button">
+                                <div id="phone">
+                                    <div class="top"></div>
+                                    <div class="trunk"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="take-photo">
+                            <div class="camera">
+                                <div class="lens"></div>
+                            </div>
                         </div>
                     </div>
-                </article> -->
+                    <div>
+                        <button id="install">Install</button>
+                    </div>
+                </nav>
             </section>
 
             <!-- This element is used as anchor for the chat -->
             <div id="bottom"></div>
         </div>
 
-        <nav>
-            <div>
-                <div class="send-box">
-                    <input type="text" id="text-message" value="Hello! :)" />
-                    <button id="send-message">Send</button>
-                </div>
-                <div id="take-photo">
-                    <div class="camera">
-                        <div class="lens"></div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <button id="install">Install</button>
-            </div>
-        </nav>
-
         <script src="scripts/utils/StringUtils.js"></script>
         <script src="scripts/utils/EnergyManager.js"></script>
+        <script src="scripts/utils/proximity-manager.js"></script>
         <!--<script src="scripts/utils/FirefoxOSInstaller.js"></script>-->
         <script src="scripts/controllers/BatteryStatusBarController.js"></script>
         <script src="scripts/controllers/ActionBarController.js"></script>
         <script src="scripts/controllers/ChatViewController.js"></script>
+        <script src="scripts/controllers/call-screen.js"></script>
+        <script src="scripts/app.js"></script>
         <script src="scripts/install.js"></script>
         <script src="scripts/start.js"></script>
     </body>

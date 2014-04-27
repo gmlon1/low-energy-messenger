@@ -2,7 +2,7 @@
  * The action bar 
  */
 
-nav {
+section#chatscreen nav {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -13,23 +13,23 @@ nav {
     text-align: center;
 }
 
-nav > div {
+section#chatscreen nav > div {
     clear:both;
     padding: 0.5em 1em 0 1em;
 }
 
 /* The send box */
 
-nav .send-box {
+section#chatscreen nav .send-box {
     float: right;
     text-align: right;
 }
-nav input {
+section#chatscreen nav input {
     width: 7em;
     font-size: 0.9em;
     padding: 0.5em;
 }
-nav button#send-message {
+section#chatscreen nav button#send-message {
     font-size: 0.9em;
     margin: 0 0 0 1em;
     padding: 0.5em;
@@ -37,14 +37,26 @@ nav button#send-message {
     color: white;
     cursor: pointer;
 }
-nav button#send-message:hover {
+section#chatscreen nav button#send-message:hover {
+    background-color: #cc9966;
+}
+
+section#chatscreen nav button#call-button {
+    font-size: 0.9em;
+    margin: 0 0 0 1em;
+    padding: 0.5em;
+    background-color: #23538a;
+    color: white;
+    cursor: pointer;
+}
+section#chatscreen nav button#call-button:hover {
     background-color: #cc9966;
 }
 
 
 /* The take-photo button */
 
-nav #take-photo {
+section#chatscreen nav #take-photo {
     float: right;
     position: relative;
     width: 2.6em;
@@ -54,14 +66,28 @@ nav #take-photo {
     border-radius: 1.3em;
     cursor: pointer;
 }
-nav #take-photo:hover {
+section#chatscreen nav #take-photo:hover {
+    background-color: #cc9966;
+}
+
+section#chatscreen nav #call-button {
+    float: right;
+    position: relative;
+    width: 2.6em;
+    height: 2.6em;
+    margin: 0 1em 0 1em;
+    background-color: #23538a;
+    border-radius: 1.3em;
+    cursor: pointer;
+}
+section#chatscreen nav #call-button:hover {
     background-color: #cc9966;
 }
 
 
 /* The install button */
 
-nav button#install {
+section#chatscreen nav button#install {
     display: none;
     width: 100%;
     font-size: 1em;
@@ -71,6 +97,6 @@ nav button#install {
     cursor: pointer;
     background-color: #23538a;
 }
-nav button#install:hover {
+section#chatscreen nav button#install:hover {
     background-color: #cc9966;
 }

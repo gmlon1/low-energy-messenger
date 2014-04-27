@@ -4,15 +4,15 @@
  * This javascript file initialize the objects needed by the XMAS Tales Web App.
  */
 
-/* Add new objects to window */
+function start() {
+    /* Add new objects to window */
 // window.mFirefoxOSInstaller = new FirefoxOSInstaller("http://www.francesco.iovine.name/mdn/low-energy-messenger/public_html/manifest.webapp");
-window.mEnergyManager = new EnergyManager();
-window.mBatteryStatusBarController = new BatteryStatusBarController();
-window.mActionBarController = new ActionBarController();
-window.mChatViewController = new ChatViewController();
-
-/* When the window is loaded */
-window.onload = function() {
+    window.mEnergyManager = new EnergyManager();
+    ProximityManager.init();
+    window.mBatteryStatusBarController = new BatteryStatusBarController();
+    window.mActionBarController = new ActionBarController();
+    window.mChatViewController = new ChatViewController();
+    CallScreen.init();
 
     /* Check if Battery Status API is supported */
     if (window.mEnergyManager.isBatteryStatusAPISupported()) {
@@ -38,4 +38,7 @@ window.onload = function() {
 
     window.scrollTo(0, 1);
 
-};
+}
+
+/* Start when the window is loaded */
+window.onload = start;

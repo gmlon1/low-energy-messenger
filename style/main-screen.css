@@ -1,0 +1,8 @@
+
+#mainscreen {
+    margin: 0 0 10em 0;
+}
+
+#mainscreen > section > article > * {
+    margin: 0 1em 0 1em;
+}

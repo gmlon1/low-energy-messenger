@@ -2,23 +2,26 @@
  * The chat 
  */
 
-section#chat {
-    margin: 0.5em 0 0 0;
+section#chatscreen {
 }
 
-section#chat article {
+section#chatscreen #chat {
+    margin: 1em;
+}
+
+section#chatscreen #chat article {
     clear: both;
     position: relative;
     width: 100%;
     text-align: left;
     padding-top: 1em;
 }
-section#chat article > div {
+section#chatscreen #chat article > div {
     float: left;
     display: inline-block;
 }
 
-section#chat article .avatar {
+section#chatscreen #chat article .avatar {
     position:relative;
     overflow:hidden;
     background: black;
@@ -28,11 +31,11 @@ section#chat article .avatar {
     border: 0.2rem solid white;
     border-radius: 0.2em;
 }
-section#chat article .avatar img {
+section#chatscreen #chat article .avatar img {
     width: 100%;
 }
 
-section#chat article .message {
+section#chatscreen #chat article .message {
     position: relative;
     min-width: 30%;
     max-width: 60%;
@@ -42,17 +45,17 @@ section#chat article .message {
     padding: 0.2em;
     font-size: 0.8em;
 }
-section#chat article .message > div {
+section#chatscreen #chat article .message > div {
 }
-section#chat article .message > div > h2 {
+section#chatscreen #chat article .message > div > h2 {
     margin:0;
     padding: 0.4em 0.4em 0.2em 0.4em;
     font-size: 1em;
 }
-section#chat article .message > div > p {
+section#chatscreen #chat article .message > div > p {
     padding: 0.2em 0.4em 0.4em 0.4em;
 }
-section#chat article .message > div:after {
+section#chatscreen #chat article .message > div:after {
     content: "";
     position: absolute;
     top: 1em;
@@ -63,22 +66,22 @@ section#chat article .message > div:after {
     display: block;
     width: 0;
 }
-section#chat article .message img {
+section#chatscreen #chat article .message img {
     width: 100%;
 }
 
-section#chat article.you {
+section#chatscreen #chat article.you {
     text-align: right;
 }
-section#chat article.you > div {
+section#chatscreen #chat article.you > div {
     float: right;
 }
-section#chat article.you .avatar {
+section#chatscreen #chat article.you .avatar {
     margin: 0 0 0 1em;
 }
-section#chat article.you .message {
+section#chatscreen #chat article.you .message {
 }
-section#chat article.you .message > div:after {
+section#chatscreen #chat article.you .message > div:after {
     right: auto;
     left: 100%;
     border-width: 0 1em 1em 0;

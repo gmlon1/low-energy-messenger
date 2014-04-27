@@ -105,3 +105,35 @@
     border: 0.1em solid #23538a;
     border-radius: 0.35em;
 }
+
+
+/* Phone */
+
+#phone {
+    background-color: white;
+    width: 0.3em;
+    transform: rotate(-30deg);
+    margin-top: 0.5em;
+    margin-left: 0.7em;
+    border-top-left-radius: 50%;
+    border-left-width: 0.3em;
+    border-left-color: white;
+    border-left-style: solid;
+    border-bottom-left-radius: 50%;
+}
+
+#phone .top {
+    width: 0.8em;
+    height: 0.55em;
+    background-color: white;
+    border-radius: 30% 0 0 0;
+}
+#phone .trunk {
+    height: 0.8em;
+}
+#phone .bottom {
+    width: 0.8em;
+    height: 0.55em;
+    background-color: white;
+    border-radius: 0 0 0 30%;
+}

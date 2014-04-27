@@ -1,0 +1,107 @@
+section#callscreen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    /* height: window.innerHeight */
+    margin: 1em 0 1em 0;
+    background-color: #00ccff;
+    background-image: url(../img/franciov.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+section#callscreen > header {
+    background: #00ccff;
+    text-align: left;
+    padding: 1em;
+    letter-spacing: 0.2em;
+}
+
+section#callscreen > header > h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+section#callscreen > header > h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+    color: white;
+}
+
+section#callscreen #callbox {
+    letter-spacing: 0.2em;
+}
+
+section#callscreen #callbox #calling {
+    padding: 1em;
+    color: white;
+    font-size: 2em;
+}
+
+section#callscreen #callbox #calling span {
+    float: left;
+}
+
+section#callscreen #callbox #calling img {
+    margin-left: 0.5em;
+    float: left;
+}
+
+section#callscreen > #proximity {
+    position: absolute;
+    bottom: 10em;
+    right: 1em;
+    font-size: 0.8em;
+    background: white;
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+section#callscreen > #proximity > header {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.5em;
+}
+
+section#callscreen nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    text-align: left;
+    margin:0;
+    padding: 0;
+    text-align: center;    
+}
+
+section#callscreen nav button {
+    width: 90%;
+    background: darkred;
+    padding: 1em 0 1em 0;
+    margin: 1em 0 1em 0;
+    border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+
+section#callscreen nav button:hover {
+    background: red;
+}
+
+
+section#callscreen.off { 
+    background: black;
+}
+
+section#callscreen.off > *:not(#proximity) {
+    display: none;
+}
