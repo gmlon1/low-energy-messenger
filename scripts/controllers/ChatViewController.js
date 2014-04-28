@@ -1,14 +1,15 @@
 
-function ChatViewController() {
-
-    /* Initialize DOM Objects */
-    this.chatscreen = document.querySelector('#chatscreen');
-    this.chat = document.querySelector('#chatscreen #chat');
-    this.nav = document.querySelector('#chatscreen nav');
-
-}
-
-ChatViewController.prototype = {
+var Chat = {
+    /* 
+     * init
+     * Initialize Object Literal
+     */
+    init: function() {
+        /* Initialize DOM Objects */
+        this.chatScreen = document.querySelector('#chatscreen');
+        this.chatBox = document.querySelector('#chatscreen #chat');
+        this.nav = document.querySelector('#chatscreen nav');
+    },
     /* 
      * sendMessage
      * Sends a message to the chat
@@ -20,7 +21,7 @@ ChatViewController.prototype = {
         if (message && message !== '') {
 
             /* The user sends a message to the chat */
-            this.chat.innerHTML = this.chat.innerHTML +
+            this.chatBox.innerHTML = this.chatBox.innerHTML +
                     '<article class="you">' +
                     '<div class="avatar"><div class="face"></div><div class="body"></div></div>' +
                     '<div class="message">' +
@@ -37,7 +38,7 @@ ChatViewController.prototype = {
         }
         else {
             // Scroll the page to the bottom in order to make the message visible
-            LowEnergyMessenger.scrollDown();
+            App.scrollDown();
         }
     },
     /* 
@@ -51,7 +52,7 @@ ChatViewController.prototype = {
         if (message && message !== '') {
 
             /* The user receives a message from the chat */
-            this.chat.innerHTML = this.chat.innerHTML +
+            this.chatBox.innerHTML = this.chatBox.innerHTML +
                     '<article>' +
                     '<div class="avatar"><img alt="franciov" src="img/franciov.png" /></div>' +
                     '<div class="message">' +
@@ -68,7 +69,7 @@ ChatViewController.prototype = {
         }
         else {
             // Scroll the page to the bottom in order to make the message visible
-            LowEnergyMessenger.scrollDown();
+            App.scrollDown();
         }
     },
     /* 
@@ -83,7 +84,7 @@ ChatViewController.prototype = {
      * Show the chat screen
      */
     show: function() {
-        LowEnergyMessenger.clearPages();
-        this.chatscreen.style.display = 'block';
+        App.clearPages();
+        this.chatScreen.style.display = 'block';
     }
 };

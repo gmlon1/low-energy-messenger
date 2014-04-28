@@ -1,16 +1,16 @@
 
-function BatteryStatusBarController() {
-
-    /* Initialize DOM Objects */
-    this.batteryStatusBar = document.querySelector('#battery-status-bar');
-    this.batteryLevelDomObj = document.querySelector('#battery-status-bar .level');
-    this.batteryPercentageDomObj = document.querySelector('#battery-status-bar .percentage');
-    this.batteryTimeDomObj = document.querySelector('#battery-status-bar .time');
-
-}
-
-
-BatteryStatusBarController.prototype = {
+var BatteryStatusBar = {
+    /* 
+     * init
+     * Initialize Object Literal
+     */
+    init: function() {
+        /* Initialize DOM Objects */
+        this.batteryStatusBar = document.querySelector('#battery-status-bar');
+        this.batteryLevelDomObj = document.querySelector('#battery-status-bar .level');
+        this.batteryPercentageDomObj = document.querySelector('#battery-status-bar .percentage');
+        this.batteryTimeDomObj = document.querySelector('#battery-status-bar .time');
+    },
     /* 
      * updateBatteryStatus 
      * Updates the battery status bar.
@@ -20,13 +20,13 @@ BatteryStatusBarController.prototype = {
     update: function(event) {
 
         /* Initialize DOM Objects */
-        BatteryStatusBarController();
+        BatteryStatusBar.init();
 
         /* Logs */
-        window.mEnergyManager.log(event);
+        EnergyManager.log(event);
 
         /* Level */
-        var percentage = window.mEnergyManager.getBatteryPercentage();
+        var percentage = EnergyManager.getBatteryPercentage();
         this.batteryLevelDomObj.style.right = (100 - percentage) + '%';
         this.batteryPercentageDomObj.innerHTML = percentage + '%';
 
@@ -44,15 +44,15 @@ BatteryStatusBarController.prototype = {
         /* Charging status and time */
         var chargingStatusAndTime = '';
 
-        if (window.mEnergyManager.isBatteryFullyCharged()) { // battery fully charged
+        if (EnergyManager.isBatteryFullyCharged()) { // battery fully charged
             chargingStatusAndTime = 'fully charged';
         }
-        else if (window.mEnergyManager.isBatteryCharging()) { // battery charging
+        else if (EnergyManager.isBatteryCharging()) { // battery charging
 
-            var batteryChargingTime = window.mEnergyManager.getBatteryChargingTime();
-            
+            var batteryChargingTime = EnergyManager.getBatteryChargingTime();
+
             chargingStatusAndTime = 'Charging: ';
-            
+
             if (batteryChargingTime) {
                 chargingStatusAndTime += batteryChargingTime;
                 chargingStatusAndTime += ' until full';
@@ -64,10 +64,10 @@ BatteryStatusBarController.prototype = {
         }
         else { // battery discharging
 
-            var batteryDischargingTime = window.mEnergyManager.getBatteryDischargingTime();
-            
+            var batteryDischargingTime = EnergyManager.getBatteryDischargingTime();
+
             chargingStatusAndTime = 'Discharging: ';
-            
+
             if (batteryDischargingTime) {
                 chargingStatusAndTime += batteryDischargingTime;
                 chargingStatusAndTime += ' remaining';

@@ -9,6 +9,10 @@ var CallScreen = {
     maxBox: document.getElementById('max'),
     deviceProximityBox: document.getElementById('deviceproximity'),
     signal: document.getElementById('signal'),
+    /* 
+     * init
+     * Initialize Object Literal
+     */
     init: function() {
 
         this.callScreen.style.height = window.innerHeight + 'px';
@@ -60,12 +64,12 @@ var CallScreen = {
         this.callScreen.setAttribute('class', 'on');
     },
     show: function() {
-        LowEnergyMessenger.clearPages();
-        LowEnergyMessenger.scrollTop();
+        App.clearPages();
+        App.scrollTop();
         this.callScreen.style.display = 'block';
     },
     hangup: function() {
-        LowEnergyMessenger.clearPages();
-        window.mChatViewController.show();
+        App.clearPages();
+        Chat.show();
     }
 };

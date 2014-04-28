@@ -1,11 +1,12 @@
 
-function FirefoxOSInstaller(manifestUrl) {
-
-    this.manifestUrl = manifestUrl;
-    this.mozApps = navigator.mozApps;
-}
-
-FirefoxOSInstaller.prototype = {
+var FirefoxOSInstaller = {
+    /* 
+     * init
+     * Initialize Object Literal
+     */
+    init: function(manifestUrl) {
+        this.manifestUrl = manifestUrl;
+    },
     /*
      * checkInstalled
      * Checks whether the app is installed
@@ -14,11 +15,11 @@ FirefoxOSInstaller.prototype = {
     checkInstalled: function() {
 
         /* If the OS is Firefox OS */
-        if (this.mozApps) {
+        if (navigator.mozApps) {
 
             // check whether the app is installed
             try {
-                var installCheck = this.mozApps.checkInstalled(this.manifestUrl);
+                var installCheck = navigator.mozApps.checkInstalled(this.manifestUrl);
 
                 var _self = this;
 
@@ -29,7 +30,7 @@ FirefoxOSInstaller.prototype = {
 
                         return true;
 
-                    } 
+                    }
 
                     return false;
                 };
@@ -37,7 +38,7 @@ FirefoxOSInstaller.prototype = {
             catch (e) {
 //                console.log('error in checkInstalled');
             }
-        }        
+        }
     },
     /*
      * install
