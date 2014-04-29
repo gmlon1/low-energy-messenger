@@ -11,7 +11,7 @@ var CallScreen = {
     signal: document.getElementById('signal'),
     /* 
      * init
-     * Initialize Object Literal
+     * Initialize the object
      */
     init: function() {
 

@@ -2,7 +2,7 @@
 var FirefoxOSInstaller = {
     /* 
      * init
-     * Initialize Object Literal
+     * Initialize the object
      */
     init: function(manifestUrl) {
         this.manifestUrl = manifestUrl;

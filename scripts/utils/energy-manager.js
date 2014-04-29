@@ -2,7 +2,7 @@
 var EnergyManager = {
     /* 
      * init
-     * Initialize Object Literal
+     * Initialize the object
      */
     init: function() {
         /* Initialize che battery object */

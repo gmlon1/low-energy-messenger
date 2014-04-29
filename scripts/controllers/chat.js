@@ -2,7 +2,7 @@
 var Chat = {
     /* 
      * init
-     * Initialize Object Literal
+     * Initialize the object
      */
     init: function() {
         /* Initialize DOM Objects */

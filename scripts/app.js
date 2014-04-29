@@ -1,5 +1,9 @@
 
 var App = {
+    /* 
+     * init
+     * Initialize the app
+     */
     init: function() {
         this.pages = document.querySelectorAll('#mainscreen > section');
 

@@ -2,7 +2,7 @@
 var ActionBar = {
     /* 
      * init
-     * Initialize Object Literal
+     * Initialize the object
      */
     init: function() {
         /* Initialize DOM Objects */
