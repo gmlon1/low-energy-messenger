@@ -102,6 +102,6 @@ var ActionBar = {
         }
     },
     call: function() {
-        CallScreen.show();
+        CallScreen.call();
     }
 };

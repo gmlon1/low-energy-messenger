@@ -26,7 +26,7 @@ var App = {
 
             /* Notify the user that the Battery Status API is supported */
             setTimeout(function() {
-                Chat.receiveMessage('Congratulations! This browser supports the Battery Status API: check the battery status bar above. Also, you won’t be able to take a photo if the battery of your device is low and not charging.', true);
+//                Chat.receiveMessage('Congratulations! This browser supports the Battery Status API: check the battery status bar above. Also, you won’t be able to take a photo if the battery of your device is low and not charging.', true);
             }, 3000);
 
         } else {
