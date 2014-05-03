@@ -14,7 +14,7 @@ var BatteryStatusBar = {
     /* 
      * updateBatteryStatus 
      * Updates the battery status bar.
-     * @param {type} event
+     * @param {Event} event
      * @returns {undefined}
      */
     update: function(event) {
