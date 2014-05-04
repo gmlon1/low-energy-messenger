@@ -14,7 +14,9 @@ var ProximityManager = {
      * @param {Function} callback
      */
     userproximity: function(callback) {
-        window.addEventListener('userproximity', callback);
+        console.log("ProximityManager.userproximity(callback)");
+        
+        window.addEventListener('userproximity', callback); // Proximity API
     },
     /* 
      * deviceproximity
@@ -22,6 +24,8 @@ var ProximityManager = {
      * @param {Function} callback
      */
     deviceproximity: function(callback) {
-        window.addEventListener('deviceproximity', callback);
+        console.log("ProximityManager.deviceproximity(callback)");
+        
+        window.addEventListener('deviceproximity', callback); // Proximity API
     }
 };

@@ -22,26 +22,36 @@ var CallScreen = {
 
         var self = this;
 
-        console.log('adding listener on userproximity');
         ProximityManager.userproximity(function(event) {
-            console.log('userproximity');
-
+            
+            /* Log */
+            console.log(event);
+            self.nearBox.innerHTML = event.near;
+            
+            /* Turn the screen off/on */
             if (event.near) {
-                self.nearBox.innerHTML = 'true';
-                self.hideView();
+                self.hideView(); // turn off the screen when the user is near
             }
             else {
-                self.nearBox.innerHTML = 'false';
                 self.showView();
             }
         });
 
-        console.log('adding listener on deviceproximity');
         ProximityManager.deviceproximity(function(event) {
-            console.log('deviceproximity');
+            
+            /* Log */
+            console.log(event);
             self.minBox.innerHTML = event.min;
             self.maxBox.innerHTML = event.max;
             self.deviceProximityBox.innerHTML = event.value;
+
+            /* Turn the screen off/on */
+            if (event.value <= 1) {
+                self.hideView(); // turn off the screen when the device proximity is less or equal to 1 cm
+            }
+            else {
+                self.showView();
+            }
         });
     },
     /* 
