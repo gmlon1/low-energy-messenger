@@ -8,7 +8,6 @@ var CallScreen = {
     init: function() {
 
         /* Initialize DOM elements */
-        this.mainScreen = document.getElementById('mainscreen');
         this.callScreen = document.getElementById('callscreen');
         this.hangupButton = document.querySelector('button#hangup');
         this.nearBox = document.getElementById('near');

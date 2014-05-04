@@ -17,7 +17,7 @@ var ProximityManager = {
         window.addEventListener('userproximity', callback);
     },
     /* 
-     * userproximity
+     * deviceproximity
      * Register a callback function on the deviceproximity event
      * @param {Function} callback
      */
