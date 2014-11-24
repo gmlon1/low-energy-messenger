@@ -1,12 +1,19 @@
 
 var EnergyManager = {
+    
+    battery: null,
+    
     /* 
      * init
      * Initialize the object
      */
     init: function() {
+        var _self = this;
+        
         /* Initialize che battery object */
-        navigator.battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery;
+        navigator.getBattery().then(function(battery) {
+            _self.battery = battery;
+        });
     },
     /*
      * isBatteryStatusAPISupported
@@ -15,7 +22,7 @@ var EnergyManager = {
      */
     isBatteryStatusAPISupported: function() {
 
-        if (navigator.battery) {
+        if (this.battery) {
             return true;
         }
 
@@ -32,10 +39,10 @@ var EnergyManager = {
             console.warn(event);
         }
 
-        console.log('battery.level: ' + navigator.battery.level);
-        console.log('battery.charging: ' + navigator.battery.charging);
-        console.log('battery.chargingTime: ' + navigator.battery.chargingTime);
-        console.log('battery.dischargingTime: ' + navigator.battery.dischargingTime);
+        console.log('battery.level: ' + this.battery.level);
+        console.log('battery.charging: ' + this.battery.charging);
+        console.log('battery.chargingTime: ' + this.battery.chargingTime);
+        console.log('battery.dischargingTime: ' + this.battery.dischargingTime);
 
     },
     /*
@@ -44,7 +51,7 @@ var EnergyManager = {
      * @returns {an Integer between 0 and 100}
      */
     getBatteryPercentage: function() {
-        var percentage = Math.round(navigator.battery.level * 100);
+        var percentage = Math.round(this.battery.level * 100);
         return percentage;
     },
     /*
@@ -53,7 +60,7 @@ var EnergyManager = {
      * @returns {Boolean}
      */
     isBatteryFullyCharged: function() {
-        if (navigator.battery.level === 1) {
+        if (this.battery.level === 1) {
             return true;
         }
         return false;
@@ -66,11 +73,11 @@ var EnergyManager = {
     isBatteryCharging: function() {
 
         // the battery cannot be charging because is completely charged
-        if (navigator.battery.level === 1) {
+        if (this.battery.level === 1) {
             return false;
         }
 
-        return navigator.battery.charging;
+        return this.battery.charging;
     },
     /*
      * getBatteryChargingTime
@@ -78,11 +85,11 @@ var EnergyManager = {
      * @returns {a String containing a formatted time if available, undefined otherwise}
      */
     getBatteryChargingTime: function() {
-        if (navigator.battery.chargingTime === Infinity
-                || navigator.battery.chargingTime === 0) {
+        if (this.battery.chargingTime === Infinity
+                || this.battery.chargingTime === 0) {
             return undefined;
         }
-        var time = StringUtils.getHumanReadableTime(navigator.battery.chargingTime);
+        var time = StringUtils.getHumanReadableTime(this.battery.chargingTime);
         return time;
     },
     /*
@@ -91,38 +98,38 @@ var EnergyManager = {
      * @returns {a String containing a formatted time, undefined otherwise}
      */
     getBatteryDischargingTime: function() {
-        if (navigator.battery.dischargingTime === Infinity
-                || navigator.battery.dischargingTime === 0) {
+        if (this.battery.dischargingTime === Infinity
+                || this.battery.dischargingTime === 0) {
             return undefined;
         }
-        var time = StringUtils.getHumanReadableTime(navigator.battery.dischargingTime);
+        var time = StringUtils.getHumanReadableTime(this.battery.dischargingTime);
         return time;
     },
     /*
      * handleChangeEvents
-     * Registers an handler to every *-change events of navigator.battery
+     * Registers an handler to every *-change events of this.battery
      * @param {function} handler
      * @returns {undefined}
      */
     handleChangeEvents: function(handler) {
 
         /* Update the battery status bar on battery level change */
-        navigator.battery.onlevelchange = function(e) {
+        this.battery.onlevelchange = function(e) {
             handler(e);
         };
 
         /* Update the battery status bar on battery charging change */
-        navigator.battery.onchargingchange = function(e) {
+        this.battery.onchargingchange = function(e) {
             handler(e);
         };
 
         /* Update the battery status bar on battery charging time change */
-        navigator.battery.onchargingtimechange = function(e) {
+        this.battery.onchargingtimechange = function(e) {
             handler(e);
         };
 
         /* Update the battery status bar on battery discharging time change */
-        navigator.battery.ondischargingtimechange = function(e) {
+        this.battery.ondischargingtimechange = function(e) {
             handler(e);
         };
     }
