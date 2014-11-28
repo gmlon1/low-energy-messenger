@@ -1,19 +1,23 @@
 
 var EnergyManager = {
-    
     battery: null,
-    
     /* 
      * init
      * Initialize the object
      */
-    init: function() {
+    init: function(callback) {
         var _self = this;
         
         /* Initialize che battery object */
-        navigator.getBattery().then(function(battery) {
-            _self.battery = battery;
-        });
+        if (navigator.getBattery) {
+            navigator.getBattery().then(function(battery) {
+                _self.battery = battery;
+                callback();
+            });
+        } else if (navigator.battery || navigator.mozBattery) {
+            _self.battery = navigator.battery || navigator.mozBattery;
+            callback();
+        }
     },
     /*
      * isBatteryStatusAPISupported
@@ -22,7 +26,7 @@ var EnergyManager = {
      */
     isBatteryStatusAPISupported: function() {
 
-        if (this.battery) {
+        if (navigator.getBattery || navigator.battery || navigator.mozBattery) {
             return true;
         }
 

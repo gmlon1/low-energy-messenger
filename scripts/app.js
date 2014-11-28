@@ -7,7 +7,6 @@ var App = {
     init: function() {
         this.pages = document.querySelectorAll('#mainscreen > section');
 
-        EnergyManager.init();
         ProximityManager.init();
         BatteryStatusBar.init();
         ActionBar.init();
@@ -17,17 +16,20 @@ var App = {
 
         /* Check if Battery Status API is supported */
         if (EnergyManager.isBatteryStatusAPISupported()) {
+            
+            EnergyManager.init(function() {
 
-            /* Update the battery status bar when the battery status changes */
-            EnergyManager.handleChangeEvents(BatteryStatusBar.update);
+                /* Update the battery status bar when the battery status changes */
+                EnergyManager.handleChangeEvents(BatteryStatusBar.update.bind(BatteryStatusBar));
 
-            /* Update the battery status bar for the first time */
-            BatteryStatusBar.update();
+                /* Update the battery status bar for the first time */
+                BatteryStatusBar.update();
 
-            /* Notify the user that the Battery Status API is supported */
-            setTimeout(function() {
-                Chat.receiveMessage('Congratulations! This browser supports the Battery Status API: check the battery status bar above. Also, you won’t be able to take a photo if the battery of your device is low and not charging.', true);
-            }, 3000);
+                /* Notify the user that the Battery Status API is supported */
+                setTimeout(function() {
+                    Chat.receiveMessage('Congratulations! This browser supports the Battery Status API: check the battery status bar above. Also, you won’t be able to take a photo if the battery of your device is low and not charging.', true);
+                }, 3000);
+            });
 
         } else {
 
