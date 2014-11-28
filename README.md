@@ -5,7 +5,7 @@ Low Energy Messenger is an instant messaging and calls Web App that pays very hi
 ![Screenshot - chatscreen](https://raw.githubusercontent.com/franciov/low-energy-messenger/master/img/screenshots/chatscreen.png)
 ![Screenshot - callscreen](https://raw.githubusercontent.com/franciov/low-energy-messenger/master/img/screenshots/callscreen-proximity-notnear.png)
 
-The demo is published [here](http://bit.ly/low-energy-messenger-proximity).
+The demo is published [here](http://bit.ly/low-energy-messenger).
 
 ## Notes
 
