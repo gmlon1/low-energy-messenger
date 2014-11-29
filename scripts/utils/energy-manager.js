@@ -1,6 +1,8 @@
 
 var EnergyManager = {
-    battery: null,
+    
+    battery: null, // BatteryManager object
+    
     /* 
      * init
      * Initialize the object
@@ -8,13 +10,13 @@ var EnergyManager = {
     init: function(callback) {
         var _self = this;
         
-        /* Initialize che battery object */
+        /* Initialize the battery object */
         if (navigator.getBattery) {
             navigator.getBattery().then(function(battery) {
                 _self.battery = battery;
                 callback();
             });
-        } else if (navigator.battery || navigator.mozBattery) {
+        } else if (navigator.battery || navigator.mozBattery) { // deprecated battery object
             _self.battery = navigator.battery || navigator.mozBattery;
             callback();
         }
